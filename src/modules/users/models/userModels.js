@@ -21,20 +21,13 @@ const userSchema = new schema({
         type: String,
         required: true
     },
-    mobile: {
-        type: String,
+    currentInteger: {
+        type: Number,
         required: true
     },
-    picPath: {
+    ProviderId: {
         type: String,
-    },
-    createdAt: {
-        type: Number,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Number,
-        default: Date.now
+        required: true
     },
     status: {
         type: String,

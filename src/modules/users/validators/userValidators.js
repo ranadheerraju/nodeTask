@@ -5,10 +5,9 @@ const signupValidations = (req, res, next) => {
     let data = req.body
 
     let signupSchema = joi.object().keys({
-        name: joi.string().required().min(3).max(20),
         email: joi.string().email().required().min(3).max(50),
         password: joi.string().required().min(6).max(32),
-        mobile: joi.string().required().min(10).max(14),
+        currentInteger: joi.number().required(),
     }).options({ allowUnknown: true })
 
     validator(data, signupSchema, (error, resp) => {

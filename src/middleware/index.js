@@ -32,7 +32,6 @@ const isAuthonticated = (req, res, next) => {
     }
 
     verifyToken(token, (error, resp) => {
-
         if (error) {
             res.status(400).send(error)
         } else {

@@ -18,11 +18,9 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err,
 })
 
 var app = express();
-var path = require("path")
 app.use(bodyParser.json())
 app.use(cors())
 
 app.use('/user', userRoutes)
-app.use('/uploads', express.static('uploads'))
 
 export default app;
