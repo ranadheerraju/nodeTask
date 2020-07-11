@@ -15,7 +15,7 @@
 2. Once node modules installed if you have mongodb locally then run npm start.
 3. Automatically it will connect to the mongodb and we can run our apis.
 
-#To test apis in postman
+# To test apis in postman
 1. http://localhost:3000/user/signup, this is for register api the sample json data is 
 {
                 name: "user",
