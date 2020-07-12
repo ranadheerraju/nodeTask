@@ -30,7 +30,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "start": "export ENVIRONMENT=prod && nodemon index.js --exec babel-node --presets es2015,stage-2",
+    "start": "nodemon index.js --exec babel-node --presets es2015,stage-2",
     "dev": "export ENVIRONMENT=dev && nodemon index.js --exec babel-node --presets es2015,stage-2",
     "test": "export ENVIRONMENT=test && mocha --require babel-core/register test/**/*.test.js"
   },
