@@ -8,7 +8,7 @@ export const UPDATE_USER_CURRENT_INTEGER = 'UPDATE_USER_CURRENT_INTEGER'
 export const GOOGLE_OAUTH = 'GOOGLE_OAUTH'
 
 export const putSignupDetails = data => async dispatch => {
-    await axios.post('http://localhost:3000/user/signup', data)
+    await axios.post('/user/signup', data)
         .then((response) => {
             setAccessToken(response.data.token);
             dispatch({
