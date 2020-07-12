@@ -52,7 +52,7 @@ class Signup extends React.Component {
             this.props.putSignupDetails(newUser)
             setTimeout(() => {
                 this.setState({ catchErrMsg: this.props.signupDetailsRes && this.props.signupDetailsRes.message })
-            }, 100);
+            }, 200);
         }
     }
 

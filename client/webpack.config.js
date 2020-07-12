@@ -1,5 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 const path = require('path');
+
 
 module.exports = {
     context: __dirname,
@@ -11,7 +14,14 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        port: "5000"
+        port: "5000",
+        proxy: {
+            '/user/**': {
+                target: 'http://localhost:3000',
+                secure: false,
+                changeOrigin: true,
+            }
+        },
     },
     module: {
         rules: [
