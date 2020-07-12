@@ -1,0 +1,106 @@
+@import "./variables.scss";
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.db-email-div {
+  @include flex-row();
+  justify-content: center;
+  align-items: center;
+}
+
+.db-ci-div {
+  @include flex-row();
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.db-ci-title {
+  font-size: 18px;
+  color: black;
+}
+
+.db-ci-value {
+  font-size: 20px;
+  color: midnightblue;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.db-ci-buttons-div {
+  @include flex-row();
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.db-buttons {
+  @include flex-row();
+  justify-content: flex-end;
+  height: max-content;
+  width: 100%;
+}
+
+.db-single-button {
+  font-size: 14px;
+  font-weight: bold;
+  background-image: linear-gradient(rgb(63, 104, 171), rgb(10, 51, 122));
+  width: max-content;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  border: none;
+}
+
+.db-next-integer-btn {
+  margin-left: 3%;
+}
+
+.db-errormsg {
+  color: red;
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 11%;
+}
+
+.db-form-tag {
+  @include flex-row();
+}
+
+.db-task-title-div {
+  @include flex-row();
+  align-items: center;
+  margin-top: 3%;
+  padding-left: 20px;
+}
+
+.db-task-title {
+  font-size: 18px;
+  color: midnightblue;
+  font-weight: bold;
+}
+
+.db-task-main-title {
+  font-size: 22px;
+  color: #607d8b;
+  margin-left: 10px;
+}
+
+.db-hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
