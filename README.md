@@ -11,9 +11,9 @@
 9. When he clicks on logout he will redirect to the home page or landing page.
 
 # How to run this task
-1. Once you clone the code, do npm i.
-2. Once node modules installed if you have mongodb locally then run npm start.
-3. Automatically it will connect to the mongodb and we can run our apis.
+1. Once you clone the code, do (npm i) in /nodeTask/ to install node.js node_modules path and (npm i) in /nodeTask/client/ to install react.js node_modules .
+2. Once node modules installed if you have mongodb locally then run (npm run dev).
+3. Automatically it will connect to the mongodb and it can run both node and react app at a time.
 
 # To test apis in postman
 1. http://localhost:3000/user/signup, this is for register api the sample json data is 
@@ -28,3 +28,5 @@
 2. http://localhost:3000/user/current, this is for fetching current integer, just pass token in headers.
 3. http://localhost:3000/user/update, this is for updating current integer, pass token in headers along with this body data
 { currentInteger: 12 }
+# To test frontend React app
+1. http://localhost:5001
