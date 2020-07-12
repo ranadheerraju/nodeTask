@@ -33,7 +33,7 @@ class Signup extends React.Component {
         this.setState({ [e.target.name]: e.target.value, emailerrMsg: '', passworderrMsg: '', catchErrMsg: '' });
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         if (this.state.email === '' || this.state.password === '') {
             if (this.state.email === '') {
@@ -49,10 +49,8 @@ class Signup extends React.Component {
                 ProviderId: 'Manual',
                 status: "active"
             };
-            this.props.putSignupDetails(newUser)
-            setTimeout(() => {
-                this.setState({ catchErrMsg: this.props.signupDetailsRes && this.props.signupDetailsRes.message })
-            }, 200);
+            await this.props.putSignupDetails(newUser);
+            await this.setState({ catchErrMsg: this.props.signupDetailsRes && this.props.signupDetailsRes.message });
         }
     }
 

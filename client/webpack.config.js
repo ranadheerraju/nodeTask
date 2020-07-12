@@ -1,27 +1,17 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
 const path = require('path');
-
 
 module.exports = {
     context: __dirname,
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
         publicPath: '/',
     },
     devServer: {
         historyApiFallback: true,
-        port: "5000",
-        proxy: {
-            '/user/**': {
-                target: 'http://localhost:3000',
-                secure: false,
-                changeOrigin: true,
-            }
-        },
+        port: "5001"
     },
     module: {
         rules: [

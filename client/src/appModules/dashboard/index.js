@@ -17,47 +17,38 @@ class Dashboard extends React.Component {
         errMsg: ''
     }
 
-    componentDidMount() {
-        this.props.getUserDetails(getAccessToken());
-        setTimeout(() => {
-            this.setState({
-                nextInteger: this.props.userDetailsRes.currentInteger + 1,
-                currentInteger: this.props.userDetailsRes.currentInteger
-            });
-        }, 100);
+    async componentDidMount() {
+        await this.props.getUserDetails(getAccessToken());
+        await this.setState({
+            nextInteger: this.props.userDetailsRes.currentInteger + 1,
+            currentInteger: this.props.userDetailsRes.currentInteger
+        });
     }
 
-    logout = () => {
-        removeToken();
-        setTimeout(() => {
-            this.props.history.push('/');
-        }, 100);
+    logout = async () => {
+        await removeToken();
+        await this.props.history.push('/');
     }
 
     handleOnChange = (e) => {
         this.setState({ currentInteger: e.target.value, errMsg: '' });
     }
 
-    generatenextInteger = (ci) => {
-        this.setState({ nextInteger: ci + 1 }, () => {
-            this.props.updateCurrentInteger({ currentInteger: this.state.nextInteger }, getAccessToken());
-            setTimeout(() => {
-                this.componentDidMount();
-            }, 200);
-        });
+    generatenextInteger = async (ci) => {
+        await this.setState({ nextInteger: ci + 1 })
+        await this.props.updateCurrentInteger({ currentInteger: this.state.nextInteger }, getAccessToken());
+        await this.componentDidMount();
     }
 
     updateCurrentInteger = () => {
         this.setState({ updateInteger: !this.state.updateInteger });
     }
 
-    handleOnSubmit = (e) => {
+    handleOnSubmit = async (e) => {
         e.preventDefault();
         if (!isNaN(this.state.currentInteger) && this.state.currentInteger >= 0) {
-            this.props.updateCurrentInteger({ currentInteger: this.state.currentInteger }, getAccessToken());
-            setTimeout(() => {
-                this.componentDidMount();
-            }, 200);
+            await this.props.updateCurrentInteger({ currentInteger: this.state.currentInteger }, getAccessToken());
+            await this.componentDidMount();
         } else {
             this.setState({ errMsg: "Please enter valid positive integer value" })
         }
