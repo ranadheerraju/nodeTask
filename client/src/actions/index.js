@@ -8,7 +8,7 @@ export const UPDATE_USER_CURRENT_INTEGER = 'UPDATE_USER_CURRENT_INTEGER'
 export const GOOGLE_OAUTH = 'GOOGLE_OAUTH'
 
 export const putSignupDetails = data => async dispatch => {
-    await axios.post('http://15.206.148.77/user/signup', data)
+    await axios.post('http://13.235.78.41/user/signup', data)
         .then((response) => {
             setAccessToken(response.data.token);
             dispatch({
@@ -27,7 +27,7 @@ export const putSignupDetails = data => async dispatch => {
 };
 
 export const getUserDetails = token => async dispatch => {
-    await axios.get('http://15.206.148.77/user/current', {
+    await axios.get('http://13.235.78.41/user/current', {
         headers: {
             'Authorization': token
         }
@@ -45,7 +45,7 @@ export const getUserDetails = token => async dispatch => {
 }
 
 export const updateCurrentInteger = (data, token) => async dispatch => {
-    await axios.put('http://15.206.148.77/user/update', data, {
+    await axios.put('http://13.235.78.41/user/update', data, {
         headers: {
             'Authorization': token
         }
@@ -63,7 +63,7 @@ export const updateCurrentInteger = (data, token) => async dispatch => {
 };
 
 export const oauthLogin = (data) => async dispatch => {
-    await axios.post('http://15.206.148.77/user/signup', data)
+    await axios.post('http://13.235.78.41/user/signup', data)
         .then((response) => {
             setAccessToken(response.data.token);
             dispatch({
